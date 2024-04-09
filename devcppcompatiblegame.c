@@ -2,7 +2,6 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <time.h>
 
 
@@ -13,7 +12,7 @@ int wallx=49;
 int playerycoord=5,playerxcoord=5;
 int gameend=1;
 int score=0;
-struct timespec remaining, request = { 0, 10000000 };
+struct timespec sec, nanosec = { 0, 10000000 };
 
 
 void startpage(){
@@ -111,7 +110,7 @@ int main(){
         }
         printf(" Score: %d" , score);
         system("cls");
-        int response = nanosleep(&request, &remaining);
+        int response = nanosleep(&nanosec, &sec);
     }
     printf("Final Score: %d" , score);
 }
