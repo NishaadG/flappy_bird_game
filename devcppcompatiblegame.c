@@ -109,8 +109,9 @@ int main(){
             printf("\n");
         }
         printf(" Score: %d" , score);
-        system("cls");
         int response = nanosleep(&nanosec, &sec);
+        system("cls");
+        //int response = nanosleep(&nanosec, &sec);
     }
     printf("Final Score: %d" , score);
 }
