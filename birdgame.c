@@ -2,8 +2,8 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
-
 
 char map[53][11];
 int wallhole=8;
@@ -12,8 +12,6 @@ int wallx=49;
 int playerycoord=5,playerxcoord=5;
 int gameend=1;
 int score=0;
-struct timespec sec, nanosec = { 0, 10000000 };
-
 
 void startpage(){
     printf("Welcome to Flappy Bird!!");
@@ -108,7 +106,7 @@ int main(){
         }
         printf(" Score: %d" , score);
         system("cls");
-        int response = nanosleep(&nanosec, &sec);
+        sleep(0.1);
     }
     printf("Final Score: %d" , score);
 }
